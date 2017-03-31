@@ -28,7 +28,7 @@ https://github.com/ARWL2016/ps-javascript-dev-env
 - "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"" - escape double quotes 
 - "test:watch": "npm run test -- --watch"
 
-####Setting up Tests 
+#### Setting up Tests 
 1. `npm install mocha chai jsdom --save-dev`  
 2. Create a `buildScripts/testSetup.js` file. This contains test config information - use ES5 only here   
 3. ES6: register babel to transpile before mocha runs in `testSetup.js`  
@@ -38,7 +38,7 @@ https://github.com/ARWL2016/ps-javascript-dev-env
 7. import the assertion library: `import {expect} from 'chai';`  
 8. describe our tests  
 
-####Testing the DOM with `jsdom`  
+#### Testing the DOM with `jsdom`  
 1. install packages as above  
 2. import `jsdom` and `expect` into our test file  
 3. To bring in our `index.html` for testing, we do not use import (I think because js can only import js files). Instead, use the node `fs` module, and use `const index = fs.readFileSync('./src/index.html', "utf-8");` inside the test function.  
@@ -48,7 +48,7 @@ https://github.com/ARWL2016/ps-javascript-dev-env
 7. Calling `window.close()` saves memory  
 
 ---
-####Continuous Integration with TravisCI and AppVeyor 
+#### Continuous Integration with TravisCI and AppVeyor 
 1. Travis tests our app on Linux and AppVeyor on a Windows platform. They allows us to test our app automatically on commit on another machine. Both work in the same way:
 2. Create a `.travis.yml` and an `appVeyor.yml` file to configure the servers. 
 3. Commit changes and push to Github 
